@@ -6,9 +6,6 @@
     <AccessibleZoneTabOrder />
     <AnimationOnByDefault />
     <AutoCreateAndUpdateDSDPhoneLayouts />
-    <DatagraphCoreV1 />
-    <DatagraphNodeSingleValueFieldV1 />
-    <DynamicAxisRange />
     <IntuitiveSorting />
     <IntuitiveSorting_SP2 />
     <MarkAnimation />
@@ -645,12 +642,14 @@
       <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
         <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
         <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
         <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
         <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
         <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
         <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
         <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
         <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
         <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
         <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
         <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -661,6 +660,20 @@
       </filter>
       <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]'>
         <groupfilter function='level-members' level='[none:Accident Severity:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]'>
+        <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Australia&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Brazil&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Canada&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;China&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Germany&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;India&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Japan&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;Russia&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;UK&quot;' />
+          <groupfilter function='member' level='[none:Country:nk]' member='&quot;USA&quot;' />
+        </groupfilter>
       </filter>
       <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]'>
         <groupfilter function='level-members' level='[none:Driver Age Group:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
@@ -752,6 +765,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='real' name='[Driver Alcohol Level]' role='measure' type='quantitative' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
@@ -759,6 +773,7 @@
             <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Alcohol Level]' derivation='None' name='[none:Driver Alcohol Level:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
@@ -790,6 +805,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -819,6 +835,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='integer' name='[Cyclists Involved]' role='measure' type='quantitative' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
@@ -826,6 +843,7 @@
             <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -857,6 +875,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -919,6 +938,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Number of Fatalities]' role='measure' type='quantitative' />
@@ -928,6 +948,7 @@
             <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Speed Limit]' derivation='None' name='[none:Speed Limit:qk]' pivot='key' type='quantitative' />
@@ -961,14 +982,11 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' field-type='quantitative' max='1220' min='0' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Speed Limit:qk]' field-type='quantitative' max='125' min='27' range-type='fixed' scope='rows' type='space' />
-          </style-rule>
           <style-rule element='mark'>
             <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
           </style-rule>
@@ -978,16 +996,32 @@
             <view>
               <breakdown value='auto' />
             </view>
-            <mark class='Circle' />
+            <mark class='Automatic' />
             <encodings>
               <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
-              <size column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]' />
             </encodings>
-            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
           </pane>
         </panes>
-        <rows>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Speed Limit:qk]</rows>
-        <cols>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]</cols>
+        <rows>([federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk] + [federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk])</rows>
+        <cols>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Speed Limit:qk]</cols>
       </table>
       <simple-id uuid='{CF5401DE-3E83-4DED-9761-0722C23752AE}' />
     </worksheet>
@@ -1007,6 +1041,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
@@ -1014,6 +1049,7 @@
             <column-instance column='[Driver Age Group]' derivation='Attribute' name='[attr:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -1033,6 +1069,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1049,8 +1086,26 @@
             <mark class='Pie' />
             <encodings>
               <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' />
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' />
               <tooltip column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[attr:Driver Age Group:nk]' />
             </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='12' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
         <rows />
@@ -1067,6 +1122,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Number of Fatalities]' role='measure' type='quantitative' />
@@ -1075,6 +1131,7 @@
             <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Road Condition]' derivation='None' name='[none:Road Condition:nk]' pivot='key' type='nominal' />
@@ -1110,6 +1167,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1133,7 +1191,7 @@
           <formatted-text>
             <run fontcolor='#000000' fontname='Benton Sans Book'>Accident Count: &lt;</run>
             <run fontcolor='#000000' fontname='Benton Sans Book'>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cnt:Accident Severity:qk]</run>
-            <run fontcolor='#000000' fontname='Benton Sans Book'><![CDATA[> & Accident SUM: <SUM(Accident Severity)>]]></run>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>&gt;</run>
           </formatted-text>
         </title>
       </layout-options>
@@ -1145,6 +1203,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='real' name='[Medical Cost]' role='measure' type='quantitative' />
@@ -1156,6 +1215,7 @@
             </column-instance>
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -1189,6 +1249,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1248,6 +1309,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='integer' name='[Number of Fatalities]' role='measure' type='quantitative' />
@@ -1255,6 +1317,7 @@
             <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -1286,6 +1349,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1334,6 +1398,7 @@
           <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
             <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
             <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
             <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
             <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
             <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
@@ -1341,6 +1406,7 @@
             <column-instance column='[Accident Severity]' derivation='Count' name='[cnt:Accident Severity:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
             <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
             <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
             <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
@@ -1371,6 +1437,7 @@
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
             <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -1416,9 +1483,9 @@
               <zone h='98794' id='57' type-v2='layout-basic' w='99092' x='454' y='603'>
                 <zone h='98794' id='47' param='horz' type-v2='layout-flow' w='99092' x='454' y='603'>
                   <zone h='98794' id='45' type-v2='layout-basic' w='99092' x='454' y='603'>
-                    <zone h='78961' id='9' param='horz' type-v2='layout-flow' w='99092' x='454' y='20436'>
-                      <zone h='78961' id='7' type-v2='layout-basic' w='99092' x='454' y='20436'>
-                        <zone h='26763' id='3' name='SeverityBreakdown' w='34974' x='64572' y='20436'>
+                    <zone h='79110' id='9' param='horz' type-v2='layout-flow' w='99092' x='454' y='20287'>
+                      <zone h='79110' id='7' type-v2='layout-basic' w='99092' x='454' y='20287'>
+                        <zone h='26813' id='3' name='SeverityBreakdown' w='34974' x='64572' y='20287'>
                           <zone-style>
                             <format attr='border-color' value='#000000' />
                             <format attr='border-style' value='none' />
@@ -1426,7 +1493,7 @@
                             <format attr='margin' value='4' />
                           </zone-style>
                         </zone>
-                        <zone h='39478' id='5' name='Impact of Speed Limits on Fatality Counts' w='64118' x='454' y='20436'>
+                        <zone h='39553' id='5' name='Impact of Speed Limits on Fatality Counts' w='64118' x='454' y='20287'>
                           <zone-style>
                             <format attr='border-color' value='#000000' />
                             <format attr='border-style' value='none' />
@@ -1434,7 +1501,7 @@
                             <format attr='margin' value='4' />
                           </zone-style>
                         </zone>
-                        <zone h='52198' id='6' name='AlcoholVsSeverity' w='34974' x='64572' y='47199'>
+                        <zone h='52297' id='6' name='AlcoholVsSeverity' w='34974' x='64572' y='47100'>
                           <zone-style>
                             <format attr='border-color' value='#000000' />
                             <format attr='border-style' value='none' />
@@ -1442,7 +1509,7 @@
                             <format attr='margin' value='4' />
                           </zone-style>
                         </zone>
-                        <zone h='39483' id='18' name='Heatmap' w='64118' x='454' y='59914'>
+                        <zone h='39557' id='18' name='Heatmap' w='64118' x='454' y='59840'>
                           <zone-style>
                             <format attr='border-color' value='#000000' />
                             <format attr='border-style' value='none' />
@@ -1464,7 +1531,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone fixed-size='162' h='15937' id='22' is-fixed='true' name='Total number of fatalities' w='16004' x='454' y='4499'>
+                    <zone fixed-size='162' h='15788' id='22' is-fixed='true' name='Total number of fatalities' w='16004' x='454' y='4499'>
                       <layout-cache fixed-size-w='80' type-h='fixed' type-w='fixed' />
                       <zone-style>
                         <format attr='border-color' value='#000000' />
@@ -1473,7 +1540,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='38' mode='radiolist' name='Heatmap' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='filter' values='database' w='15101' x='29594' y='4499'>
+                    <zone h='15788' id='38' mode='radiolist' name='Heatmap' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='filter' values='database' w='15101' x='29594' y='4499'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -1481,7 +1548,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='51' name='PieChartGender' pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' type-v2='color' w='10215' x='89331' y='4499'>
+                    <zone h='15788' id='10' name='AlcoholVsSeverity' pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='23242' x='76304' y='4499'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -1489,7 +1556,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='10' name='AlcoholVsSeverity' pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='12518' x='76813' y='4499'>
+                    <zone h='15788' id='60' mode='radiolist' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='10706' x='44695' y='4499'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -1497,15 +1564,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='60' mode='radiolist' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='10706' x='44695' y='4499'>
-                      <zone-style>
-                        <format attr='border-color' value='#000000' />
-                        <format attr='border-style' value='none' />
-                        <format attr='border-width' value='0' />
-                        <format attr='margin' value='4' />
-                      </zone-style>
-                    </zone>
-                    <zone h='15937' id='50' name='PieChartGender' w='10706' x='66107' y='4499'>
+                    <zone h='15788' id='50' name='PieChartGender' w='10197' x='66107' y='4499'>
                       <layout-cache type-h='fixed' type-w='fixed' />
                       <zone-style>
                         <format attr='border-color' value='#000000' />
@@ -1514,7 +1573,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='64' mode='radiolist' name='AlcoholVsSeverity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='13136' x='16458' y='4499'>
+                    <zone h='15788' id='64' mode='radiolist' name='AlcoholVsSeverity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='13136' x='16458' y='4499'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -1522,7 +1581,7 @@
                         <format attr='margin' value='4' />
                       </zone-style>
                     </zone>
-                    <zone h='15937' id='63' mode='radiolist' name='AlcoholVsSeverity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='10706' x='55401' y='4499'>
+                    <zone h='15788' id='63' mode='radiolist' name='AlcoholVsSeverity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='10706' x='55401' y='4499'>
                       <zone-style>
                         <format attr='border-color' value='#000000' />
                         <format attr='border-style' value='none' />
@@ -1584,15 +1643,6 @@
                 </zone>
                 <zone fixed-size='119' h='15937' id='50' is-fixed='true' name='PieChartGender' w='10706' x='66107' y='4499'>
                   <layout-cache type-h='fixed' type-w='fixed' />
-                  <zone-style>
-                    <format attr='border-color' value='#000000' />
-                    <format attr='border-style' value='none' />
-                    <format attr='border-width' value='0' />
-                    <format attr='margin' value='4' />
-                    <format attr='padding' value='0' />
-                  </zone-style>
-                </zone>
-                <zone h='15937' id='51' name='PieChartGender' pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' type-v2='color' w='10215' x='89331' y='4499'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1689,7 +1739,7 @@
     </dashboard>
   </dashboards>
   <windows source-height='44'>
-    <window class='dashboard' maximized='true' name='Overview'>
+    <window class='dashboard' name='Overview'>
       <viewpoints>
         <viewpoint name='AlcoholVsSeverity'>
           <zoom type='entire-view' />
@@ -1704,10 +1754,10 @@
         <viewpoint name='SeverityBreakdown' />
         <viewpoint name='Total number of fatalities' />
       </viewpoints>
-      <active id='3' />
+      <active id='6' />
       <simple-id uuid='{F44AB3D0-86E9-4F72-9272-29E4B432D092}' />
     </window>
-    <window class='worksheet' name='Total number of fatalities'>
+    <window class='worksheet' maximized='true' name='Total number of fatalities'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -1781,8 +1831,7 @@
         <edge name='right'>
           <strip size='160'>
             <card param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' type='filter' />
-            <card pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]' type='size' />
-            <card pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type='color' />
+            <card pane-specification-id='1' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -1927,28 +1976,4 @@
       <simple-id uuid='{F74E455F-4B63-49C0-A018-D76B451ABABF}' />
     </window>
   </windows>
-  <datagraph>
-    <graph>
-      <properties>
-        <default-execution-subgraph-guid value='1115a2f9-95c9-4502-afe4-fd2fe0de8b01' />
-      </properties>
-      <node-execution-subgraphs>
-        <pair execution-subgraph-guid='1115a2f9-95c9-4502-afe4-fd2fe0de8b01' node-guid='baa8696d-3ae5-4330-8ba0-bf6865da16b3' />
-        <pair execution-subgraph-guid='1115a2f9-95c9-4502-afe4-fd2fe0de8b01' node-guid='63190d12-7b89-4f5c-8b60-5d87b75c4949' />
-        <pair execution-subgraph-guid='1115a2f9-95c9-4502-afe4-fd2fe0de8b01' node-guid='f586d65a-b17d-435a-93ca-51075b9b9b99' />
-        <pair execution-subgraph-guid='1115a2f9-95c9-4502-afe4-fd2fe0de8b01' node-guid='bcaa2d9a-3cf6-4b58-ac53-1740fcf85496' />
-      </node-execution-subgraphs>
-      <nodes>
-        <axis-extent-node axis-extent='start' duplicate-index='0' extent-input-guid='5acc516a-16bf-4fee-b5f4-5f9d7c43ca45' fieldname='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' node-guid='baa8696d-3ae5-4330-8ba0-bf6865da16b3' orientation='horizontal' sheet-identifier='{CF5401DE-3E83-4DED-9761-0722C23752AE}' />
-        <single-value-field-node fieldname='[Parameters].[AxisEnd]' fieldname-input-guid='89bdcd53-131b-4dfc-81e7-a2ef88e873a2' node-guid='63190d12-7b89-4f5c-8b60-5d87b75c4949' value-output-guid='a9842229-4efd-409c-8894-a577802c4a2d' />
-        <axis-extent-node axis-extent='end' duplicate-index='0' extent-input-guid='e295cf47-3102-4919-9178-54c6b9adf0a8' fieldname='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' node-guid='f586d65a-b17d-435a-93ca-51075b9b9b99' orientation='horizontal' sheet-identifier='{CF5401DE-3E83-4DED-9761-0722C23752AE}' />
-        <single-value-field-node fieldname='[Parameters].[AxisStart 2]' fieldname-input-guid='51b748cf-8e79-408a-ab00-24b9dbe74ed7' node-guid='bcaa2d9a-3cf6-4b58-ac53-1740fcf85496' value-output-guid='bc2d125d-e81d-477c-a74a-445255ed7a38' />
-      </nodes>
-      <edges>
-        <edge from='a9842229-4efd-409c-8894-a577802c4a2d' to='e295cf47-3102-4919-9178-54c6b9adf0a8' />
-        <edge from='bc2d125d-e81d-477c-a74a-445255ed7a38' to='5acc516a-16bf-4fee-b5f4-5f9d7c43ca45' />
-      </edges>
-      <pin-values />
-    </graph>
-  </datagraph>
 </workbook>
