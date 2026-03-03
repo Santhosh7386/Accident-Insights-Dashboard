@@ -1,0 +1,2361 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20253.26.0109.0333                               -->
+<workbook original-version='18.1' source-build='2025.3.2 (20253.26.0109.0333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <ParameterAction />
+    <ParameterActionClearSelection />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='Green-Red-Gold Diverging' type='ordered-diverging'>
+      <color>#22763f</color>
+      <color>#2e7f47</color>
+      <color>#398a50</color>
+      <color>#459559</color>
+      <color>#4f9f63</color>
+      <color>#5fa866</color>
+      <color>#72b065</color>
+      <color>#89b761</color>
+      <color>#9fbe5f</color>
+      <color>#b6c35a</color>
+      <color>#cec85e</color>
+      <color>#f4d166</color>
+      <color>#fcbb58</color>
+      <color>#fba952</color>
+      <color>#fa994e</color>
+      <color>#f88a4d</color>
+      <color>#f37e4b</color>
+      <color>#ec714a</color>
+      <color>#e56349</color>
+      <color>#de5748</color>
+      <color>#d24743</color>
+      <color>#c7383f</color>
+      <color>#be2a3e</color>
+    </color-palette>
+    <color-palette custom='true' name='MyPallete' type='ordered-diverging'>
+      <color>#4e79a7</color>
+      <color>#b07aa1</color>
+      <color>#e15759</color>
+    </color-palette>
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='AxisEnd' datatype='integer' name='[AxisEnd]' param-domain-type='any' role='measure' type='quantitative' value='1220'>
+        <calculation class='tableau' formula='1220' />
+      </column>
+      <column caption='AxisStart 1' datatype='integer' name='[AxisStart 1]' param-domain-type='any' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
+      </column>
+      <column caption='AxisStart 2' datatype='integer' name='[AxisStart 2]' param-domain-type='any' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
+      </column>
+      <column caption='AxisStart' datatype='integer' name='[AxisStart]' param-domain-type='any' role='measure' type='quantitative' value='0'>
+        <calculation class='tableau' formula='0' />
+      </column>
+      <column caption='Select Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Driver Alcohol Level&quot;'>
+        <calculation class='tableau' formula='&quot;Driver Alcohol Level&quot;' />
+        <members>
+          <member value='&quot;Cyclists Involved&quot;' />
+          <member value='&quot;Driver Alcohol Level&quot;' />
+          <member value='&quot;Driver Fatigue&quot;' />
+          <member value='&quot;Visibility Level&quot;' />
+        </members>
+      </column>
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[Parameter 1]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Cyclicts Involved&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Cyclists Involved&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+    </datasource>
+    <datasource caption='road_accident_dataset' inline='true' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='road_accident_dataset' name='textscan.1tmcr0t0u84amq1c7vqjq1ntxqa8'>
+            <connection class='textscan' directory='Data/Accident-Insights-Dashboard' filename='road_accident_dataset.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1tmcr0t0u84amq1c7vqjq1ntxqa8' name='road_accident_dataset.csv' table='[road_accident_dataset#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_IE' separator=','>
+            <column datatype='string' name='Country' ordinal='0' />
+            <column datatype='integer' name='Year' ordinal='1' />
+            <column datatype='string' name='Month' ordinal='2' />
+            <column datatype='string' name='Day of Week' ordinal='3' />
+            <column datatype='string' name='Time of Day' ordinal='4' />
+            <column datatype='string' name='Urban/Rural' ordinal='5' />
+            <column datatype='string' name='Road Type' ordinal='6' />
+            <column datatype='string' name='Weather Conditions' ordinal='7' />
+            <column datatype='real' name='Visibility Level' ordinal='8' />
+            <column datatype='integer' name='Number of Vehicles Involved' ordinal='9' />
+            <column datatype='integer' name='Speed Limit' ordinal='10' />
+            <column datatype='string' name='Driver Age Group' ordinal='11' />
+            <column datatype='string' name='Driver Gender' ordinal='12' />
+            <column datatype='real' name='Driver Alcohol Level' ordinal='13' />
+            <column datatype='integer' name='Driver Fatigue' ordinal='14' />
+            <column datatype='string' name='Vehicle Condition' ordinal='15' />
+            <column datatype='integer' name='Pedestrians Involved' ordinal='16' />
+            <column datatype='integer' name='Cyclists Involved' ordinal='17' />
+            <column datatype='string' name='Accident Severity' ordinal='18' />
+            <column datatype='integer' name='Number of Injuries' ordinal='19' />
+            <column datatype='integer' name='Number of Fatalities' ordinal='20' />
+            <column datatype='real' name='Emergency Response Time' ordinal='21' />
+            <column datatype='real' name='Traffic Volume' ordinal='22' />
+            <column datatype='string' name='Road Condition' ordinal='23' />
+            <column datatype='string' name='Accident Cause' ordinal='24' />
+            <column datatype='integer' name='Insurance Claims' ordinal='25' />
+            <column datatype='real' name='Medical Cost' ordinal='26' />
+            <column datatype='real' name='Economic Loss' ordinal='27' />
+            <column datatype='string' name='Region' ordinal='28' />
+            <column datatype='real' name='Population Density' ordinal='29' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_IE&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Day of Week</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Day of Week]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Day of Week</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Time of Day</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Time of Day]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Time of Day</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Urban/Rural</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Urban/Rural]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Urban/Rural</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Road Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Road Type]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Road Type</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Weather Conditions</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Weather Conditions]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Weather Conditions</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Visibility Level</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Visibility Level]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Visibility Level</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of Vehicles Involved</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of Vehicles Involved]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Number of Vehicles Involved</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Speed Limit</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Speed Limit]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Speed Limit</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Driver Age Group</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Driver Age Group]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Driver Age Group</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Driver Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Driver Gender]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Driver Gender</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Driver Alcohol Level</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Driver Alcohol Level]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Driver Alcohol Level</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Driver Fatigue</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Driver Fatigue]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Driver Fatigue</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Vehicle Condition</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Vehicle Condition]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Vehicle Condition</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pedestrians Involved</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pedestrians Involved]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Pedestrians Involved</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Cyclists Involved</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Cyclists Involved]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Cyclists Involved</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Accident Severity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Accident Severity]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Accident Severity</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of Injuries</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of Injuries]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Number of Injuries</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of Fatalities</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of Fatalities]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Number of Fatalities</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Emergency Response Time</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Emergency Response Time]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Emergency Response Time</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Traffic Volume</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Traffic Volume]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Traffic Volume</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Road Condition</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Road Condition]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Road Condition</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Accident Cause</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Accident Cause]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Accident Cause</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Insurance Claims</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Insurance Claims]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Insurance Claims</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Medical Cost</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Medical Cost]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Medical Cost</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Economic Loss</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Economic Loss]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Economic Loss</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Region</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Region]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Region</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Population Density</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Population Density]</local-name>
+            <parent-name>[road_accident_dataset.csv]</parent-name>
+            <remote-alias>Population Density</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+      <column caption='Measures' datatype='real' name='[Calculation_2839258347696132]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;  WHEN &apos;Cyclists Involved&apos; THEN [Cyclists Involved]&#13;&#10;  WHEN &apos;Driver Alcohol Level&apos; THEN [Driver Alcohol Level]&#13;&#10;  WHEN &apos;Driver Fatigue&apos; THEN [Driver Fatigue]&#13;&#10;  WHEN &apos;Visibility Level&apos; THEN [Visibility Level]&#13;&#10;END' />
+      </column>
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <column caption='road_accident_dataset.csv' datatype='table' name='[__tableau_internal_object_id__].[road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53]' role='measure' type='quantitative' />
+      <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+      <group caption='Action (Accident Cause,Accident Severity)' hidden='true' name='[Action (Accident Cause,Accident Severity)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Accident Cause]' />
+          <groupfilter function='level-members' level='[Accident Severity]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Accident Severity)' hidden='true' name='[Action (Accident Severity)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Accident Severity]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Accident Severity,Road Condition)' hidden='true' name='[Action (Accident Severity,Road Condition)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Accident Severity]' />
+          <groupfilter function='level-members' level='[Road Condition]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Driver Age Group,Driver Gender)' hidden='true' name='[Action (Driver Age Group,Driver Gender)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Driver Age Group]' />
+          <groupfilter function='level-members' level='[Driver Gender]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Driver Gender)' hidden='true' name='[Action (Driver Gender)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Driver Gender]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Road Condition)' hidden='true' name='[Action (Road Condition)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Road Condition]' />
+        </groupfilter>
+      </group>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Accident Severity:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Minor&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Severe&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Moderate&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Accident Cause:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Distracted Driving&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Weather&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Speeding&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Mechanical Failure&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Drunk Driving&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Driver Gender:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Female&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Male&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Ireland&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Driver Alcohol Level&quot;'>
+          <calculation class='tableau' formula='&quot;Driver Alcohol Level&quot;' />
+        </column>
+      </datasource-dependencies>
+      <object-graph>
+        <objects>
+          <object caption='road_accident_dataset.csv' id='road_accident_dataset.csv_DB53F92968464D59A9FFD0C7A3959D53'>
+            <properties context=''>
+              <relation connection='textscan.1tmcr0t0u84amq1c7vqjq1ntxqa8' name='road_accident_dataset.csv' table='[road_accident_dataset#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_IE' separator=','>
+                  <column datatype='string' name='Country' ordinal='0' />
+                  <column datatype='integer' name='Year' ordinal='1' />
+                  <column datatype='string' name='Month' ordinal='2' />
+                  <column datatype='string' name='Day of Week' ordinal='3' />
+                  <column datatype='string' name='Time of Day' ordinal='4' />
+                  <column datatype='string' name='Urban/Rural' ordinal='5' />
+                  <column datatype='string' name='Road Type' ordinal='6' />
+                  <column datatype='string' name='Weather Conditions' ordinal='7' />
+                  <column datatype='real' name='Visibility Level' ordinal='8' />
+                  <column datatype='integer' name='Number of Vehicles Involved' ordinal='9' />
+                  <column datatype='integer' name='Speed Limit' ordinal='10' />
+                  <column datatype='string' name='Driver Age Group' ordinal='11' />
+                  <column datatype='string' name='Driver Gender' ordinal='12' />
+                  <column datatype='real' name='Driver Alcohol Level' ordinal='13' />
+                  <column datatype='integer' name='Driver Fatigue' ordinal='14' />
+                  <column datatype='string' name='Vehicle Condition' ordinal='15' />
+                  <column datatype='integer' name='Pedestrians Involved' ordinal='16' />
+                  <column datatype='integer' name='Cyclists Involved' ordinal='17' />
+                  <column datatype='string' name='Accident Severity' ordinal='18' />
+                  <column datatype='integer' name='Number of Injuries' ordinal='19' />
+                  <column datatype='integer' name='Number of Fatalities' ordinal='20' />
+                  <column datatype='real' name='Emergency Response Time' ordinal='21' />
+                  <column datatype='real' name='Traffic Volume' ordinal='22' />
+                  <column datatype='string' name='Road Condition' ordinal='23' />
+                  <column datatype='string' name='Accident Cause' ordinal='24' />
+                  <column datatype='integer' name='Insurance Claims' ordinal='25' />
+                  <column datatype='real' name='Medical Cost' ordinal='26' />
+                  <column datatype='real' name='Economic Loss' ordinal='27' />
+                  <column datatype='string' name='Region' ordinal='28' />
+                  <column datatype='real' name='Population Density' ordinal='29' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <shared-views>
+    <shared-view name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+      <datasources>
+        <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+        <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+        <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+        <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]'>
+        <groupfilter function='level-members' level='[none:Accident Cause:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]'>
+        <groupfilter function='level-members' level='[none:Accident Severity:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]'>
+        <groupfilter function='level-members' level='[none:Country:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]'>
+        <groupfilter function='level-members' level='[none:Driver Age Group:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]'>
+        <groupfilter function='level-members' level='[none:Driver Gender:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]'>
+        <groupfilter function='level-members' level='[none:Road Type:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]'>
+        <groupfilter function='level-members' level='[none:Vehicle Condition:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+      <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]'>
+        <groupfilter function='level-members' level='[none:Weather Conditions:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+      </filter>
+    </shared-view>
+  </shared-views>
+  <actions>
+    <action caption='Filter 3 (generated)' name='[Action7_08EFDA83703342168F500EB9759BF2DE]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='Impact of Population Density on Severity' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <action caption='Filter 1 (generated)' name='[Action8_2202A9D88AB44453A263D846EDB5B506]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='Visibility' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <action caption='Filter 4 (generated)' name='[Action8_F38FF6DA588649FD82B7934ED255BF7D]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='PieChartGender' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <action caption='Filter 2 (generated)' name='[Action8_F808BD970327429598A0B2E4CCB9F244]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Overview' type='sheet' worksheet='Severity Distribution by Road Condition' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Overview' />
+      </command>
+    </action>
+    <edit-parameter-action caption='Parameter1' name='[Action1_AB313C776FDE4F48B8FF7D521533CEB1]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Impact of Speed Limits on Fatality Counts' />
+      <agg-type type='min' />
+      <clear-option type='assign-fixed-value' value='i:0' />
+      <params>
+        <param name='source-field' value='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' />
+        <param name='target-parameter' value='[Parameters].[AxisStart]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Parameter2' name='[Action2_5A92556AEEDA49BD9D56519147656195]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Impact of Speed Limits on Fatality Counts' />
+      <agg-type type='min' />
+      <clear-option type='assign-fixed-value' value='i:0' />
+      <params>
+        <param name='source-field' value='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' />
+        <param name='target-parameter' value='[Parameters].[AxisStart 1]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Parameter3' name='[Action3_BCC51749E5D94364BC253E95A8721A03]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Impact of Speed Limits on Fatality Counts' />
+      <agg-type type='max' />
+      <clear-option type='assign-fixed-value' value='i:1220' />
+      <params>
+        <param name='source-field' value='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' />
+        <param name='target-parameter' value='[Parameters].[AxisEnd]' />
+      </params>
+    </edit-parameter-action>
+    <edit-parameter-action caption='Parameter4' name='[Action4_8AF46BB40E5D43A1B60EA7BFF32466ED]'>
+      <activation type='on-select' />
+      <source type='sheet' worksheet='Impact of Speed Limits on Fatality Counts' />
+      <agg-type type='min' />
+      <clear-option type='assign-fixed-value' value='i:0' />
+      <params>
+        <param name='source-field' value='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' />
+        <param name='target-parameter' value='[Parameters].[AxisStart 2]' />
+      </params>
+    </edit-parameter-action>
+  </actions>
+  <worksheets>
+    <worksheet name='Impact of Population Density on Severity'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Benton Sans Book'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Population Density]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Population Density]' derivation='Sum' name='[sum:Population Density:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='reorder-dimensionality' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='crossjoin'>
+                <groupfilter function='member' level='[Road Condition]' member='&quot;Dry&quot;' />
+                <groupfilter function='union'>
+                  <groupfilter function='member' level='[Accident Severity]' member='&quot;Minor&quot;' />
+                  <groupfilter function='member' level='[Accident Severity]' member='&quot;Moderate&quot;' />
+                  <groupfilter function='member' level='[Accident Severity]' member='&quot;Severe&quot;' />
+                </groupfilter>
+              </groupfilter>
+              <order>
+                <hierarchy name='[Accident Severity]' />
+                <hierarchy name='[Road Condition]' />
+              </order>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' value='Accident Severity'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Accident Severity</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' value='Weather Conditions'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Weather Conditions</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' value='Vehicle Condition'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Vehicle Condition</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Population Density:qk]</rows>
+        <cols>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</cols>
+      </table>
+      <simple-id uuid='{2A8E249C-99CE-4E69-A7AC-FA802D3F71D8}' />
+    </worksheet>
+    <worksheet name='Impact of Speed Limits on Fatality Counts'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Impact of Speed Limits on Fatality, Vehicles Involved And Injurie </run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Fatalities]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Number of Injuries]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Number of Vehicles Involved]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Speed Limit]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Speed Limit]' derivation='None' name='[none:Speed Limit:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Fatalities]' derivation='Sum' name='[sum:Number of Fatalities:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Injuries]' derivation='Sum' name='[sum:Number of Injuries:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Number of Vehicles Involved]' derivation='Sum' name='[sum:Number of Vehicles Involved:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Severity]' />
+              <groupfilter function='level-members' level='[Road Condition]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' scope='rows' value='Fatalities' />
+            <format attr='title' class='0' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]' scope='rows' value='Vehicles Involved' />
+            <format attr='title' class='0' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Injuries:qk]' scope='rows' value='Injuries' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' palette='orange_blue_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]' value='Road Type'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Road Type</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Injuries:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk] + ([federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk] + [federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Injuries:qk]))</rows>
+        <cols>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Speed Limit:qk]</cols>
+      </table>
+      <simple-id uuid='{CF5401DE-3E83-4DED-9761-0722C23752AE}' />
+    </worksheet>
+    <worksheet name='PieChartGender'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Benton Sans Book' fontsize='9'>Gender&amp;Age</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='Attribute' name='[attr:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Severity]' />
+              <groupfilter function='level-members' level='[Road Condition]' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' value='56' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' value='Driver Age Group'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Driver Age Group</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Pie' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' />
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' />
+              <tooltip column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[attr:Driver Age Group:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-align' value='auto' />
+                <format attr='vertical-align' value='auto' />
+                <format attr='wrap' value='auto' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-weight' value='bold' />
+                <format attr='font-size' value='12' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{5C11DC5E-510B-4BD8-8AE8-1A642EF4E34C}' />
+    </worksheet>
+    <worksheet name='Severity Distribution by Road Condition'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontcolor='#000000' fontname='Benton Sans Book'>Severity Distribution by Road Condition</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Medical Cost]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='Count' name='[cnt:Accident Severity:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Medical Cost]' derivation='Sum' name='[cum:sum:Medical Cost:qk]' pivot='key' type='quantitative'>
+              <table-calc aggregation='Sum' ordering-type='Rows' type='CumTotal' />
+            </column-instance>
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Condition]' derivation='None' name='[none:Road Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='Count' name='[pcto:cnt:Accident Severity:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cnt:Accident Severity:qk]' palette='Green-Red-Gold Diverging' type='interpolated' />
+            <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[pcto:cnt:Accident Severity:qk]' palette='MyPallete' type='interpolated' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]' value='Country'>
+              <formatted-text>
+                <run bold='true' fontname='Benton Sans Book'>Country</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[pcto:cnt:Accident Severity:qk]' />
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cnt:Accident Severity:qk]' />
+              <tooltip column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cum:sum:Medical Cost:qk]' />
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' />
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[pcto:cnt:Accident Severity:qk]' />
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cum:sum:Medical Cost:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Condition:nk]</rows>
+        <cols />
+      </table>
+      <simple-id uuid='{C2A90099-504F-40B2-A71C-22FD1B83FCF8}' />
+    </worksheet>
+    <worksheet name='Total number of Vehicles Involved'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontsize='10'>Total number of Vehicles Involved</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Vehicles Involved]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Vehicles Involved]' derivation='Sum' name='[sum:Number of Vehicles Involved:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='46' />
+            <format attr='width' value='267' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Vehicles Involved:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='4.0076613426208496' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{67FAE70B-A67A-456C-98C4-B98EF5D24B47}' />
+    </worksheet>
+    <worksheet name='Total number of fatalities'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Benton Sans Book' fontsize='10'>Total number of fatalities</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Fatalities]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Fatalities]' derivation='Sum' name='[sum:Number of Fatalities:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Severity]' />
+              <groupfilter function='level-members' level='[Road Condition]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='46' />
+            <format attr='width' value='267' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Fatalities:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='4.0076613426208496' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{AD9D73D1-6853-4778-B332-A7A1E4CCEA1E}' />
+    </worksheet>
+    <worksheet name='Total number of injuries'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Benton Sans Book' fontsize='10'>Total number of injuries</run>
+            <run>Æ&#10;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Number of Injuries]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Number of Injuries]' derivation='Sum' name='[sum:Number of Injuries:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_2202A9D88AB44453A263D846EDB5B506]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Cause]' />
+              <groupfilter function='level-members' level='[Accident Severity]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Severity]' />
+              <groupfilter function='level-members' level='[Road Condition]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Cause,Accident Severity)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='height' value='46' />
+            <format attr='width' value='267' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <text column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Number of Injuries:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='4.0076613426208496' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{2BAA3F2E-0304-4353-8551-A202426B765D}' />
+    </worksheet>
+    <worksheet name='Visibility'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Benton Sans Book'>Heat Map Of &lt;</run>
+            <run bold='true' fontname='Benton Sans Book'>[Parameters].[Parameter 1]</run>
+            <run bold='true' fontname='Benton Sans Book'>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Select Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Driver Alcohol Level&quot;'>
+              <calculation class='tableau' formula='&quot;Driver Alcohol Level&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+            <column datatype='string' name='[Accident Cause]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Accident Severity]' role='dimension' type='nominal' />
+            <column caption='Measures' datatype='real' name='[Calculation_2839258347696132]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [Parameters].[Parameter 1]&#13;&#10;  WHEN &apos;Cyclists Involved&apos; THEN [Cyclists Involved]&#13;&#10;  WHEN &apos;Driver Alcohol Level&apos; THEN [Driver Alcohol Level]&#13;&#10;  WHEN &apos;Driver Fatigue&apos; THEN [Driver Fatigue]&#13;&#10;  WHEN &apos;Visibility Level&apos; THEN [Visibility Level]&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column datatype='integer' name='[Cyclists Involved]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Driver Alcohol Level]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Driver Fatigue]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Driver Gender]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Condition]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+            <column datatype='real' name='[Visibility Level]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+            <column-instance column='[Accident Cause]' derivation='None' name='[none:Accident Cause:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Accident Severity]' derivation='None' name='[none:Accident Severity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Driver Gender]' derivation='None' name='[none:Driver Gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2839258347696132]' derivation='Sum' name='[sum:Calculation_2839258347696132:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Cyclists Involved]' derivation='Sum' name='[sum:Cyclists Involved:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]'>
+            <groupfilter function='level-members' level='[Accident Severity]' user:ui-action-filter='[Action7_08EFDA83703342168F500EB9759BF2DE]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F808BD970327429598A0B2E4CCB9F244]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Accident Severity]' />
+              <groupfilter function='level-members' level='[Road Condition]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[Driver Age Group]' />
+              <groupfilter function='level-members' level='[Driver Gender]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]'>
+            <groupfilter function='level-members' level='[Driver Gender]' user:ui-action-filter='[Action8_F38FF6DA588649FD82B7934ED255BF7D]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Cyclists Involved:qk]' shelf='rows'>
+              <sort-filter-info>
+                <sort-filter level-name='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' member-value='&quot;Mechanical Failure&quot;' />
+              </sort-filter-info>
+            </shelf-sort-v2>
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Age Group,Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Driver Gender)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[:Measure Names]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity,Road Condition)]</column>
+            <column>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[Action (Accident Severity)]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='20' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+            <format attr='height' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' value='71' />
+            <format attr='width' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' value='48' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' value='39' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Cyclists Involved:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
+            <encoding attr='color' field='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Calculation_2839258347696132:qk]' palette='Green-Red-Gold Diverging' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Calculation_2839258347696132:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.7999999523162842' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]</rows>
+        <cols>[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]</cols>
+      </table>
+      <simple-id uuid='{48707F9A-64A8-4F30-AB9F-94F95A706472}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Overview'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+        <datasource caption='road_accident_dataset' name='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Select Measure' datatype='string' name='[Parameter 1]' param-domain-type='list' role='measure' type='nominal' value='&quot;Driver Alcohol Level&quot;'>
+          <calculation class='tableau' formula='&quot;Driver Alcohol Level&quot;' />
+          <members>
+            <member value='&quot;Cyclists Involved&quot;' />
+            <member value='&quot;Driver Alcohol Level&quot;' />
+            <member value='&quot;Driver Fatigue&quot;' />
+            <member value='&quot;Visibility Level&quot;' />
+          </members>
+        </column>
+      </datasource-dependencies>
+      <datasource-dependencies datasource='federated.0d4juvq1s9x5cp17fb6nd1c1vgqe'>
+        <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+        <column datatype='string' name='[Driver Age Group]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Road Type]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Vehicle Condition]' role='dimension' type='nominal' />
+        <column datatype='string' name='[Weather Conditions]' role='dimension' type='nominal' />
+        <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Driver Age Group]' derivation='None' name='[none:Driver Age Group:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Road Type]' derivation='None' name='[none:Road Type:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Vehicle Condition]' derivation='None' name='[none:Vehicle Condition:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Weather Conditions]' derivation='None' name='[none:Weather Conditions:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98794' id='77' param='horz' type-v2='layout-flow' w='99366' x='317' y='603'>
+            <zone h='98794' id='57' type-v2='layout-basic' w='99366' x='317' y='603'>
+              <zone h='98794' id='47' param='horz' type-v2='layout-flow' w='99366' x='317' y='603'>
+                <zone h='98794' id='45' type-v2='layout-basic' w='99366' x='317' y='603'>
+                  <zone h='78356' id='9' param='horz' type-v2='layout-flow' w='99366' x='317' y='21041'>
+                    <zone h='78356' id='7' type-v2='layout-basic' w='99366' x='317' y='21041'>
+                      <zone h='78356' id='3' name='Severity Distribution by Road Condition' w='31269' x='68414' y='21041'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='47360' id='5' name='Impact of Speed Limits on Fatality Counts' w='50362' x='317' y='21041'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='78356' id='6' name='Impact of Population Density on Severity' w='17735' x='50679' y='21041'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='30996' id='18' name='Visibility' w='50362' x='317' y='68401'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                  <zone forceUpdate='true' h='3896' id='17' type-v2='text' w='99366' x='317' y='603'>
+                    <formatted-text>
+                      <run bold='true' fontalignment='1' fontname='Tahoma' fontsize='22' underline='true'>Traffic Accidents</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='162' h='7893' id='22' is-fixed='true' name='Total number of fatalities' w='16042' x='317' y='4499'>
+                    <layout-cache fixed-size-w='80' type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='10' name='Impact of Population Density on Severity' pane-specification-id='2' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='13301' x='86382' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='60' mode='radiolist' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='9209' x='34706' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='50' name='PieChartGender' w='9949' x='53464' y='4499'>
+                    <layout-cache type-h='fixed' type-w='fixed' />
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='64' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='10331' x='16359' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='63' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='9549' x='43915' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='69' mode='dropdown' name='Severity Distribution by Road Condition' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]' type-v2='filter' values='database' w='9891' x='63413' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='16542' id='72' mode='checklist' name='Impact of Speed Limits on Fatality Counts' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]' type-v2='filter' values='database' w='8016' x='26690' y='4499'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone h='8649' id='73' name='Total number of injuries' w='16042' x='317' y='12392'>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone custom-title='true' h='16542' id='78' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='13078' x='73304' y='4499'>
+                    <formatted-text>
+                      <run bold='true' fontname='Benton Sans Book'>Select Measure</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1900' minheight='1900' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='90' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98794' id='89' param='vert' type-v2='layout-flow' w='99092' x='454' y='603'>
+                <zone forceUpdate='true' h='3896' id='17' type-v2='text' w='99092' x='454' y='603'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontname='Tahoma' fontsize='22' underline='true'>Traffic Accidents</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='55' h='7893' id='22' is-fixed='true' name='Total number of fatalities' w='16001' x='454' y='4499'>
+                  <layout-cache fixed-size-w='80' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='60' mode='dropdown' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='9183' x='34751' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='124' h='16542' id='50' is-fixed='true' name='PieChartGender' w='9921' x='53458' y='4499'>
+                  <layout-cache type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone custom-title='true' h='16542' id='78' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='13041' x='73243' y='4499'>
+                  <formatted-text>
+                    <run bold='true' fontname='Benton Sans Book'>Select Measure</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='61' h='8649' id='73' is-fixed='true' name='Total number of injuries' w='16001' x='454' y='12392'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='72' mode='checkdropdown' name='Impact of Speed Limits on Fatality Counts' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]' type-v2='filter' values='database' w='7994' x='26757' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='47360' id='5' is-fixed='true' name='Impact of Speed Limits on Fatality Counts' w='50226' x='454' y='21041'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='64' mode='dropdown' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='10302' x='16455' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='63' mode='dropdown' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='9524' x='43934' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='78356' id='6' is-fixed='true' name='Impact of Population Density on Severity' w='17687' x='50680' y='21041'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='10' name='Impact of Population Density on Severity' pane-specification-id='2' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='13262' x='86284' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='16542' id='69' mode='dropdown' name='Severity Distribution by Road Condition' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]' type-v2='filter' values='database' w='9864' x='63379' y='4499'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='78356' id='3' is-fixed='true' name='Severity Distribution by Road Condition' w='31179' x='68367' y='21041'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='240' h='30996' id='18' is-fixed='true' name='Visibility' w='50226' x='454' y='68401'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+                <format attr='background-color' value='#ffffff' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{3290EFFF-63FF-4B76-8D2C-D0EDDFFA165B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='44'>
+    <window class='dashboard' maximized='true' name='Overview'>
+      <viewpoints>
+        <viewpoint name='Impact of Population Density on Severity'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Impact of Speed Limits on Fatality Counts'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='PieChartGender' />
+        <viewpoint name='Severity Distribution by Road Condition' />
+        <viewpoint name='Total number of fatalities' />
+        <viewpoint name='Total number of injuries' />
+        <viewpoint name='Visibility'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='6' />
+      <simple-id uuid='{F44AB3D0-86E9-4F72-9272-29E4B432D092}' />
+    </window>
+    <window class='worksheet' name='Total number of fatalities'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{DEAF7BE9-2314-475A-8B4A-2DE67754020C}' />
+    </window>
+    <window class='worksheet' name='Total number of injuries'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{52B5EE34-8735-4CFF-8D4A-5237FD1E942B}' />
+    </window>
+    <window class='worksheet' name='Total number of Vehicles Involved'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6E37C168-4B60-4E1F-B0DE-287981180378}' />
+    </window>
+    <window class='worksheet' name='Severity Distribution by Road Condition'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[cnt:Accident Severity:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B0BBB8D2-8AF5-4194-9B75-3643F879F5E1}' />
+    </window>
+    <window class='worksheet' name='Impact of Speed Limits on Fatality Counts'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' type='filter' />
+            <card pane-specification-id='1' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C2CA763B-B18A-4CD0-9019-E798B998F985}' />
+    </window>
+    <window class='worksheet' name='Visibility'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type='filter' />
+            <card param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Cause:nk]' type='filter' />
+            <card mode='compact' param='[Parameters].[Parameter 1]' type='parameter' />
+            <card pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[sum:Calculation_2839258347696132:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{654A9CBB-1DE6-4C22-8274-242FFB439A74}' />
+    </window>
+    <window class='worksheet' name='Impact of Population Density on Severity'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6BFA8FB3-29FC-4163-A0AA-0E883930F86D}' />
+    </window>
+    <window class='worksheet' name='PieChartGender'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='radiolist' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Gender:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F74E455F-4B63-49C0-A018-D76B451ABABF}' />
+    </window>
+  </windows>
+</workbook>
