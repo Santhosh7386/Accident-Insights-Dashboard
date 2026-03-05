@@ -1766,13 +1766,13 @@
       </datasource-dependencies>
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='98794' id='77' param='horz' type-v2='layout-flow' w='99286' x='357' y='603'>
-            <zone h='98794' id='57' type-v2='layout-basic' w='99286' x='357' y='603'>
-              <zone h='98794' id='47' param='horz' type-v2='layout-flow' w='99286' x='357' y='603'>
-                <zone h='98794' id='45' type-v2='layout-basic' w='99286' x='357' y='603'>
-                  <zone h='78356' id='9' param='horz' type-v2='layout-flow' w='99286' x='357' y='21041'>
-                    <zone h='78356' id='7' type-v2='layout-basic' w='99286' x='357' y='21041'>
-                      <zone h='78356' id='3' name='Severity Distribution by Road Condition' w='31241' x='68402' y='21041'>
+          <zone h='98008' id='77' param='horz' type-v2='layout-flow' w='98640' x='680' y='996'>
+            <zone h='98008' id='57' type-v2='layout-basic' w='98640' x='680' y='996'>
+              <zone h='98008' id='47' param='horz' type-v2='layout-flow' w='98640' x='680' y='996'>
+                <zone h='98008' id='45' type-v2='layout-basic' w='98640' x='680' y='996'>
+                  <zone h='77734' id='9' param='horz' type-v2='layout-flow' w='98640' x='680' y='21270'>
+                    <zone h='77734' id='7' type-v2='layout-basic' w='98640' x='680' y='21270'>
+                      <zone h='77734' id='3' name='Severity Distribution by Road Condition' w='31039' x='68281' y='21270'>
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1780,7 +1780,7 @@
                           <format attr='margin' value='4' />
                         </zone-style>
                       </zone>
-                      <zone h='47360' id='5' name='Impact of Speed Limits on Fatality Counts' w='50323' x='357' y='21041'>
+                      <zone h='46983' id='5' name='Impact of Speed Limits on Fatality Counts' w='49995' x='680' y='21270'>
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1788,7 +1788,7 @@
                           <format attr='margin' value='4' />
                         </zone-style>
                       </zone>
-                      <zone h='78356' id='6' name='Impact of Population Density on Severity' w='17722' x='50680' y='21041'>
+                      <zone h='77734' id='6' name='Impact of Population Density on Severity' w='17606' x='50675' y='21270'>
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1796,7 +1796,7 @@
                           <format attr='margin' value='4' />
                         </zone-style>
                       </zone>
-                      <zone h='30996' id='18' name='Visibility' w='50323' x='357' y='68401'>
+                      <zone h='30751' id='18' name='Visibility' w='49995' x='680' y='68253'>
                         <zone-style>
                           <format attr='border-color' value='#000000' />
                           <format attr='border-style' value='none' />
@@ -1806,7 +1806,7 @@
                       </zone>
                     </zone>
                   </zone>
-                  <zone forceUpdate='true' h='3896' id='17' type-v2='text' w='99286' x='357' y='603'>
+                  <zone forceUpdate='true' h='3864' id='17' type-v2='text' w='98640' x='680' y='996'>
                     <formatted-text>
                       <run bold='true' fontalignment='1' fontname='Tahoma' fontsize='22' underline='true'>Traffic Accidents</run>
                     </formatted-text>
@@ -1817,7 +1817,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone fixed-size='162' h='7893' id='22' is-fixed='true' name='Total number of fatalities' w='16031' x='357' y='4499'>
+                  <zone fixed-size='162' h='7830' id='22' is-fixed='true' name='Total number of fatalities' w='15926' x='680' y='4860'>
                     <layout-cache fixed-size-w='80' type-h='fixed' type-w='fixed' />
                     <zone-style>
                       <format attr='border-color' value='#000000' />
@@ -1826,7 +1826,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='10' name='Impact of Population Density on Severity' pane-specification-id='2' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='13289' x='86354' y='4499'>
+                  <zone h='16410' id='10' name='Impact of Population Density on Severity' pane-specification-id='2' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Accident Severity:nk]' type-v2='color' w='13203' x='86117' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1834,7 +1834,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='60' mode='radiolist' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='9201' x='34720' y='4499'>
+                  <zone h='16410' id='60' mode='radiolist' name='PieChartGender' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Driver Age Group:nk]' type-v2='filter' values='database' w='9142' x='34818' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1842,7 +1842,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='50' name='PieChartGender' w='9942' x='53463' y='4499'>
+                  <zone h='16410' id='50' name='PieChartGender' w='9877' x='53440' y='4860'>
                     <layout-cache type-h='fixed' type-w='fixed' />
                     <zone-style>
                       <format attr='border-color' value='#000000' />
@@ -1851,7 +1851,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='64' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='10322' x='16388' y='4499'>
+                  <zone h='16410' id='64' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Weather Conditions:nk]' type-v2='filter' values='database' w='10254' x='16606' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1859,7 +1859,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='63' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='9542' x='43921' y='4499'>
+                  <zone h='16410' id='63' mode='radiolist' name='Impact of Population Density on Severity' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Vehicle Condition:nk]' type-v2='filter' values='database' w='9480' x='43960' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1867,7 +1867,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='69' mode='dropdown' name='Severity Distribution by Road Condition' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]' type-v2='filter' values='database' w='9883' x='63405' y='4499'>
+                  <zone h='16410' id='69' mode='dropdown' name='Severity Distribution by Road Condition' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Country:nk]' type-v2='filter' values='database' w='9819' x='63317' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1875,7 +1875,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='16542' id='72' mode='checklist' name='Impact of Speed Limits on Fatality Counts' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]' type-v2='filter' values='database' w='8010' x='26710' y='4499'>
+                  <zone h='16410' id='72' mode='checklist' name='Impact of Speed Limits on Fatality Counts' param='[federated.0d4juvq1s9x5cp17fb6nd1c1vgqe].[none:Road Type:nk]' type-v2='filter' values='database' w='7958' x='26860' y='4860'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1883,7 +1883,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone h='8649' id='73' name='Total number of injuries' w='16031' x='357' y='12392'>
+                  <zone h='8580' id='73' name='Total number of injuries' w='15926' x='680' y='12690'>
                     <zone-style>
                       <format attr='border-color' value='#000000' />
                       <format attr='border-style' value='none' />
@@ -1891,7 +1891,7 @@
                       <format attr='margin' value='4' />
                     </zone-style>
                   </zone>
-                  <zone custom-title='true' h='16542' id='78' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='13066' x='73288' y='4499'>
+                  <zone custom-title='true' h='16410' id='78' mode='list' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='12981' x='73136' y='4860'>
                     <formatted-text>
                       <run bold='true' fontname='Benton Sans Book'>Select Measure</run>
                     </formatted-text>
@@ -2096,7 +2096,7 @@
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='3' />
+      <active id='18' />
       <simple-id uuid='{F44AB3D0-86E9-4F72-9272-29E4B432D092}' />
     </window>
     <window class='worksheet' name='Total number of fatalities'>
