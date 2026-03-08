@@ -103,11 +103,18 @@ Gender
 Accident-Insights-Dashboard
 │
 ├── Accident Insights - Final.pbix        # Power BI dashboard file
+
 ├── EDA.ipynb                              # Exploratory Data Analysis notebook
+
 ├── Data Visualisation and Insight Report.pdf  # Project report
+
 ├── Individual Work Diary.pdf              # Documentation of individual work
+
 ├── road_accident_dataset.zip              # Dataset used for analysis
+
 └── README.md                              # Project documentation
+
+
 🔍 Key Insights
 
 The dashboard helps identify important trends such as:
